@@ -1,7 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import React from "react";
 import { LunarArea } from "./LunarArea";
 import mapBg from "../map-bg.png";
+import { AllLunarAreaIds, MapEvents } from "../types/Lunares";
 
 const MapContainer = styled.div`
   display: grid;
@@ -12,30 +13,21 @@ const MapContainer = styled.div`
   background-repeat: round;
 `;
 
-type LunarAreaId = "A1" | "A2" | "A3" | "A4" | "B1" | "B2" | "B3" | "B4";
-
-const AllLunarAreaIds: LunarAreaId[] = [
-  "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"
-];
-
-type MapEvents = {
-  [key in LunarAreaId]?: {
-    objectives?: string[];
-    warnings?: string[];
-  }
-}
-
 interface Props {
   events: MapEvents;
 }
 
 export const Map = ({ events }: Props) => {
-
   return (
     <MapContainer>
-      {
-        AllLunarAreaIds.map(id => <LunarArea id={id} key={id} objectives={events[id]?.objectives ?? []} warnings={events[id]?.warnings ?? []} />)
-      }
+      {AllLunarAreaIds.map((id) => (
+        <LunarArea
+          id={id}
+          key={id}
+          objectives={events[id]?.objectives ?? []}
+          warnings={events[id]?.warnings ?? []}
+        />
+      ))}
     </MapContainer>
-  )
+  );
 };
