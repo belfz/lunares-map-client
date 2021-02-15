@@ -5,7 +5,7 @@ const LunarAreaContainer = styled.div`
   border: 1px dashed gray;
   display: flex;
   flex-direction: column;
-  padding: 3rem .5rem .5rem .5rem;
+  padding: 2rem .5rem .5rem .5rem;
   color: white;
 `;
 
@@ -16,13 +16,22 @@ const LunarAreaIdMarker = styled.h2`
 
 const Objectives = styled.div`
   color: white;
+  h3 {
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 3rem;
+    padding: .25rem;
+  }
   ul {
-    margin: 0;
+    margin-top: 0.5rem;
+    padding-left: 4rem;
   }
 `;
 
 const Warnings = styled.div`
   color: #FE2826;
+  margin-bottom: 1rem;
   h3 {
     border: 1px solid #FE2826;
     border-radius: 10px;
@@ -41,7 +50,7 @@ const WarningsListing = styled.div`
 `;
 
 const Warning = styled.h1`
-  font-size: 72px;
+  font-size: 48px;
 `;
 
 interface Props {
@@ -55,7 +64,7 @@ export const LunarArea = ({ id, objectives, warnings }: Props) => {
     <LunarAreaContainer>
       {warnings.length > 0 && (
         <Warnings>
-          <h3>🚨 warnings 🚨</h3>
+          <h3>warnings 🚨</h3>
           <WarningsListing>
             {warnings.map((wrn, idx) => <Warning key={idx}>{wrn}</Warning>)}
           </WarningsListing>
@@ -63,7 +72,7 @@ export const LunarArea = ({ id, objectives, warnings }: Props) => {
       )}
       {objectives.length > 0 && (
         <Objectives>
-          <h3>objectives</h3>
+          <h3>objectives 🎯</h3>
           <ul>
             {objectives.map((obj, idx) => <li key={idx}>{obj}</li>)}
           </ul>
