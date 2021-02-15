@@ -15,14 +15,14 @@ const MapContainer = styled.div`
 export const Map = () => {
   return (
     <MapContainer>
-      <LunarArea id="A4" />
-      <LunarArea id="A3" />
-      <LunarArea id="A2" />
-      <LunarArea id="A1" />
-      <LunarArea id="B4" />
-      <LunarArea id="B3" />
-      <LunarArea id="B2" />
-      <LunarArea id="B1" />
+      <LunarArea id="A4" objectives={["collect a sample", "something else"]} warnings={["seismic activity"]} />
+      <LunarArea id="A3" objectives={[]} warnings={["seismic activity"]} />
+      <LunarArea id="A2" objectives={[]} warnings={[]} />
+      <LunarArea id="A1" objectives={[]} warnings={["aliens blocking the door"]} />
+      <LunarArea id="B4" objectives={[]} warnings={[]} />
+      <LunarArea id="B3" objectives={[]} warnings={[]} />
+      <LunarArea id="B2" objectives={[]} warnings={[]} />
+      <LunarArea id="B1" objectives={[]} warnings={[]} />
     </MapContainer>
   )
 };
