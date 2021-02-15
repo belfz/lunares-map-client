@@ -1,0 +1,12 @@
+{
+  "A4": {
+    "warnings": ["🌋"]
+  },
+  "A2": {
+    "objectives": ["collect samples"]
+  },
+  "B1": {
+    "warnings": ["☄️"],
+    "objectives": ["collect samples"]
+  }
+}

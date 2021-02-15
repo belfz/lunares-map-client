@@ -12,17 +12,30 @@ const MapContainer = styled.div`
   background-repeat: round;
 `;
 
-export const Map = () => {
+type LunarAreaId = "A1" | "A2" | "A3" | "A4" | "B1" | "B2" | "B3" | "B4";
+
+const AllLunarAreaIds: LunarAreaId[] = [
+  "A1", "A2", "A3", "A4", "B1", "B2", "B3", "B4"
+];
+
+type MapEvents = {
+  [key in LunarAreaId]?: {
+    objectives?: string[];
+    warnings?: string[];
+  }
+}
+
+interface Props {
+  events: MapEvents;
+}
+
+export const Map = ({ events }: Props) => {
+
   return (
     <MapContainer>
-      <LunarArea id="A4" objectives={["collect a sample", "something else"]} warnings={["seismic activity"]} />
-      <LunarArea id="A3" objectives={[]} warnings={["seismic activity"]} />
-      <LunarArea id="A2" objectives={[]} warnings={[]} />
-      <LunarArea id="A1" objectives={[]} warnings={["aliens blocking the door"]} />
-      <LunarArea id="B4" objectives={[]} warnings={[]} />
-      <LunarArea id="B3" objectives={[]} warnings={[]} />
-      <LunarArea id="B2" objectives={[]} warnings={[]} />
-      <LunarArea id="B1" objectives={[]} warnings={[]} />
+      {
+        AllLunarAreaIds.map(id => <LunarArea id={id} key={id} objectives={events[id]?.objectives ?? []} warnings={events[id]?.warnings ?? []} />)
+      }
     </MapContainer>
   )
 };
