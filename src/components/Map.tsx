@@ -11,13 +11,24 @@ const MapContainer = styled.div`
   height: 100vh;
   background-image: url(${mapBg});
   background-repeat: round;
+  position: relative;
+`;
+
+const ConnectionLostWarning = styled.h1`
+  font-size: 60px;
+  color: red;
+  position: absolute;
+  top: 50%; /* Position Y halfway in */
+  left: 50%; /* Position X halfway in */
+  transform: translate(-50%,-50%); /* Move it halfway back(x,y) */
 `;
 
 interface Props {
   events: MapEvents;
+  isConnected: boolean;
 }
 
-export const Map = ({ events }: Props) => {
+export const Map = ({ events, isConnected }: Props) => {
   return (
     <MapContainer>
       {AllLunarAreaIds.map((id) => (
@@ -28,6 +39,7 @@ export const Map = ({ events }: Props) => {
           warnings={events[id]?.warnings ?? []}
         />
       ))}
+      {!isConnected && <ConnectionLostWarning>CONNECTION LOST</ConnectionLostWarning>}
     </MapContainer>
   );
 };
