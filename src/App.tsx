@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { Map } from "./components/Map";
-// import events from "./events.json";
 import { MapEvents } from "./types/Lunares";
 
 function App() {
