@@ -3,6 +3,8 @@ import "./App.css";
 import { Map } from "./components/Map";
 import { MapEvents } from "./types/Lunares";
 
+const WS_SERVER_ADDRESS = "ws://192.168.255.117:8079";
+
 function App() {
   const [eva, setEva] = React.useState<MapEvents>({});
   const [isConnected, setIsConnected] = React.useState<boolean>(false);
@@ -22,7 +24,7 @@ function App() {
       };
     };
 
-    startWebsocketConnection(`ws://192.168.255.117:8079`);
+    startWebsocketConnection(WS_SERVER_ADDRESS);
   }, []);
 
   return <Map events={eva} isConnected={isConnected} />;
