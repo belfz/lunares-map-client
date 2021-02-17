@@ -7,7 +7,7 @@ const LunarAreaContainer = styled.div`
   border: 1px dashed gray;
   display: flex;
   flex-direction: column;
-  padding: 2rem 0.5rem 0.5rem 0.5rem;
+  padding: 5% 0.5rem 0.5rem 0.5rem;
   color: white;
 `;
 

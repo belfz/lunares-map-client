@@ -7,12 +7,12 @@ const ObjectivesContainer = styled.div`
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
-    margin: 0 3rem;
+    margin: 0 10%;
     padding: 0.25rem;
   }
   ul {
     margin-top: 0.5rem;
-    padding-left: 4rem;
+    padding-left: 10%;
   }
 `;
 

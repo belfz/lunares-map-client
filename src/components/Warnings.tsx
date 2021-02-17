@@ -8,7 +8,7 @@ const WarningsContainer = styled.div`
     border: 1px solid #fe2826;
     border-radius: 10px;
     text-align: center;
-    margin: 0 3rem;
+    margin: 0 10%;
     padding: 0.25rem;
   }
 `;
@@ -22,7 +22,7 @@ const WarningsListing = styled.div`
 `;
 
 const Warning = styled.h1`
-  font-size: 48px;
+  font-size: 36px;
 `;
 
 interface Props {

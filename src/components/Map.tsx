@@ -6,8 +6,8 @@ import { AllLunarAreaIds, MapEvents } from "../types/Lunares";
 
 const MapContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 50% 50%;
   height: 100vh;
   background-image: url(${mapBg});
   background-repeat: round;
