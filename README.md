@@ -27,3 +27,6 @@ Map UI with events
 
 Map UI - disconnected state
 ![map-ui](example-screenshots/map-ui-disconnected.png)
+
+Map UI - on a small tablet with divided screen
+![map-ui](example-screenshots/map-tablet.jpeg)
